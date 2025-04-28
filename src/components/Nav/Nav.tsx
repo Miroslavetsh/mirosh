@@ -20,10 +20,9 @@ const Nav: React.FC<NavPropsTypes> = (props): React.JSX.Element => {
   };
 
   const classNames = [styles.nav];
-  opened && classNames.push(styles._opened);
 
   return (
-    <nav className={classNames.join(" ")}>
+    <nav className={`${classNames.join(" ")} ${opened ? styles._opened : ""}`}>
       <ul className={styles.list}>
         {navLinks.map((link, index) => {
           const delayOnTransiotion = {
