@@ -1,0 +1,9 @@
+.container {
+  max-inline-size: 1110px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  &._big {
+    max-inline-size: 1920px;
+  }
+}
