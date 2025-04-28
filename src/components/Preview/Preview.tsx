@@ -1,15 +1,6 @@
 import Heading from "../Heading/Heading";
 import Container from "../Container/Container";
 
-// import photo from '../../img/preview/mirosh-with-laptop.png'
-// import shapeUnder from '../../img/preview/shape-under-mirosh.png'
-// import div from '../../img/preview/div.svg'
-// import script from '../../img/preview/script.svg'
-// import span from '../../img/preview/span.svg'
-// import mirosh from '../../img/preview/mirosh.svg'
-// import elips from '../../img/preview/elips.svg'
-// import elipsSmall from '../../img/preview/elips-small.svg'
-
 import styles from "./Preview.module.scss";
 
 const Preview: React.FC = (): React.JSX.Element => {
