@@ -3,9 +3,12 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --blue-rgb: 237 245 255;
+  --green-rgb: 125 161 35;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -17,15 +20,6 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-:root {
-  --blue-rgb: 237 245 255;
-  --green-rgb: 125 161 35;
-}
-
-body {
   font-family: "Work Sans", sans-serif;
 }
 
@@ -39,15 +33,17 @@ body:has(.card[data-color="green"]:hover) {
 
 @layer utilities {
   .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+    @apply max-w-5xl mx-auto sm:px-12 sm:py-12 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
   }
 
   .head-text {
-    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
+    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug;
+    font-family: "Poppins", sans-serif;
   }
 
   .subhead-text {
-    @apply font-semibold sm:text-3xl text-xl relative font-poppins;
+    @apply font-semibold sm:text-3xl text-xl relative;
+    font-family: "Poppins", sans-serif;
   }
 
   .blue-gradient_text {
@@ -55,11 +51,13 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .input {
-    @apply bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
+    @apply bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   }
 
   .textarea {
-    @apply block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card;
+    @apply block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   }
 
   .btn {
@@ -67,11 +65,11 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .header {
-    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
+    @apply flex justify-between items-center sm:px-12 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
   }
 
   .footer {
-    @apply max-w-5xl mx-auto sm:px-16 pb-6 px-8 flex flex-col gap-7;
+    @apply max-w-5xl mx-auto sm:px-12 pb-6 px-8 flex flex-col gap-7;
   }
 
   .footer-container {
@@ -79,7 +77,13 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .info-box {
-    @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl neo-brutalism-blue pt-4 pb-12 px-8;
+    @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl pt-4 pb-12 px-8;
+    background: #2b77e7;
+    position: relative;
+    border-radius: 10px;
+    border: #2b77e7;
+    box-shadow: 0.6vmin 0.6vmin #336cc1, 1vmin 1vmin #0092db, 1vmin 1vmin #0092db,
+      0.65vmin 1vmin #0092db, 1vmin 0.65vmin #0092db;
   }
 
   .neo-btn {
@@ -91,7 +95,8 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .cta-text {
-    @apply text-black-500 font-extrabold flex-1 text-3xl max-md:text-center;
+    @apply font-extrabold flex-1 text-3xl max-md:text-center;
+    color: #1D2235;
   }
 }
 
@@ -103,7 +108,14 @@ body:has(.card[data-color="green"]:hover) {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.lo .block-container {
+.logo {
+  border-radius: 8.889px;
+  background: #fff;
+  box-shadow: 0px 10px 35px -4px rgba(67, 83, 255, 0.15),
+    0px 1.5px 4px -1px rgba(67, 83, 255, 0.2);
+}
+
+.block-container {
   position: relative;
   transition: 250ms;
   perspective: 500px;
@@ -166,11 +178,11 @@ body:has(.card[data-color="green"]:hover) {
   overflow: hidden;
 }
 
-.block-container:hover>.btn-back {
+.block-container:hover > .btn-back {
   transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg) rotateY(-20deg);
 }
 
-.block-container:hover>.btn-front {
+.block-container:hover > .btn-front {
   transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
 }
 
