@@ -1,7 +1,7 @@
 import React from "react";
 
-import Container from "@/components/Container/Container";
-import Heading from "@/components/Heading/Heading";
+import Container from "@/components/Landing/Container/Container";
+import Heading from "@/components/Landing/Heading/Heading";
 
 import styles from "./AboutMe.module.scss";
 

@@ -1,6 +1,6 @@
-import AboutMe from "@/components/AboutMe/AboutMe";
-import Header from "@/components/Header/Header";
-import Preview from "@/components/Preview/Preview";
+import AboutMe from "@/components/Landing/AboutMe/AboutMe";
+import Header from "@/components/Landing/Header/Header";
+import Preview from "@/components/Landing/Preview/Preview";
 
 export default async function Home() {
   return (
