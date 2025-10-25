@@ -29,6 +29,12 @@ const Navbar = () => {
           Projects
         </Link>
         <Link
+          href="/contact"
+          className={isActive("/contact") ? "text-blue-500" : "text-black"}
+        >
+          Contact
+        </Link>
+        <Link
           href="/profile"
           className={isActive("/profile") ? "text-blue-500" : "text-black"}
         >
