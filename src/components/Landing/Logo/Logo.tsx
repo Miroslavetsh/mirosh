@@ -1,8 +1,9 @@
+import Link from "next/link";
 import styles from "./Logo.module.scss";
 
 const Logo: React.FC = (): React.JSX.Element => {
   return (
-    <div className={styles.logo}>
+    <Link href="/" className={styles.logo}>
       <svg
         width="164"
         height="32"
@@ -19,7 +20,7 @@ const Logo: React.FC = (): React.JSX.Element => {
           fill="#FFC700"
         />
       </svg>
-    </div>
+    </Link>
   );
 };
 
