@@ -3,6 +3,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+export type Link = {
+  text: string;
+  href: string;
+};
+
+const navLinks: Array<Link> = [
+  { text: "Summary", href: "/about" },
+  { text: "Projects", href: "/projects" },
+  { text: "Contact", href: "/contact" },
+  { text: "Profile", href: "/profile" },
+];
+
 const Navbar = () => {
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
@@ -16,30 +28,15 @@ const Navbar = () => {
         <p className="blue-gradient_text">AH</p>
       </Link>
       <nav className="flex items-center gap-7 text-lg font-medium">
-        <Link
-          href="/about"
-          className={isActive("/about") ? "text-blue-500" : "text-black"}
-        >
-          Summary
-        </Link>
-        <Link
-          href="/projects"
-          className={isActive("/projects") ? "text-blue-500" : "text-black"}
-        >
-          Projects
-        </Link>
-        <Link
-          href="/contact"
-          className={isActive("/contact") ? "text-blue-500" : "text-black"}
-        >
-          Contact
-        </Link>
-        <Link
-          href="/profile"
-          className={isActive("/profile") ? "text-blue-500" : "text-black"}
-        >
-          Profile
-        </Link>
+        {navLinks.map(({ href, text }) => (
+          <Link
+            key={href}
+            href={href}
+            className={isActive(href) ? "text-blue-500" : "text-black"}
+          >
+            {text}
+          </Link>
+        ))}
       </nav>
     </header>
   );
