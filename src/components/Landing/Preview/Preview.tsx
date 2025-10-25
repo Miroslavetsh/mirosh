@@ -35,10 +35,15 @@ const Preview: React.FC = (): React.JSX.Element => {
           <Heading text="Software Engineer" level={1} />
           <Heading text="Goals" level={3} />
           <p>
-            More than 100 features are covered with unit, integration tests,
-            Feature Flags and rolled out to production for the last year. Expert
-            level React.js and great product sense, have reach expertise in code
-            reviewing. In love with Functional Paradigm.
+            Successfully delivered 100+ commercial web projects across diverse
+            industries, consistently focusing on scalability, maintainability,
+            and user experience.
+          </p>
+          <br />
+          <p>
+            Skilled in refactoring and architecting complex systems, including
+            designing robust state machines and streamlining application
+            workflows.
           </p>
         </div>
 
