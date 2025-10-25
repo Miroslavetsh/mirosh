@@ -1,15 +1,7 @@
-import AboutMe from "@/components/Landing/AboutMe/AboutMe";
-import Header from "@/components/Landing/Header/Header";
-import Preview from "@/components/Landing/Preview/Preview";
-
 export default async function Home() {
   return (
-    <div className="page">
-      <Header />
-      <div className="main">
-        <Preview />
-        <AboutMe />
-      </div>
+    <div className="container mx-auto">
+      <h1 className="text-5xl font-bold underline">Hello world!</h1>
     </div>
   );
 }
