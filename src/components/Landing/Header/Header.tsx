@@ -19,7 +19,7 @@ export type Link = {
 const navLinks: Array<Link> = [
   { text: "About Me", href: "#about" },
   // { text: 'How I Work', href: '#how-do-i-work' },
-  { text: "My certificates", href: "#certificates" },
+  // { text: "My certificates", href: "#certificates" },
   // { text: 'Contacts', href: '#contacts' },
 ];
 
