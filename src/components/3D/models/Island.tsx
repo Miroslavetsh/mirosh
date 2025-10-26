@@ -5,6 +5,7 @@ import { a } from "@react-spring/three";
 import { Group, Mesh, Material } from "three";
 
 import islandScene from "@/assets/3D/island.glb";
+import { Axis } from "../HomeScene/HomeScene";
 
 interface IslandNodes {
   polySurface944_tree_body_0: Mesh;
@@ -25,7 +26,13 @@ type IslandGLTF = {
   materials: IslandMaterials;
 };
 
-const Island = (props: React.JSX.IntrinsicElements["group"]) => {
+type IslandProps = React.JSX.IntrinsicElements["group"] & {
+  scale?: Axis | null;
+  position?: Axis | null;
+  rotation?: Axis | null;
+};
+
+const Island: React.FC<IslandProps> = (props) => {
   const { nodes, materials } = useGLTF(islandScene) as unknown as IslandGLTF;
   const islandRef = useRef<Group>(null);
 
