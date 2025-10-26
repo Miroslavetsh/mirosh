@@ -25,7 +25,7 @@ const Navbar = () => {
         className="w-10 h-10 bg-white rounded-lg flex items-center justify-center font-bold shadow-md"
         href="/"
       >
-        <p className="blue-gradient_text">AH</p>
+        <p className="blue-gradient_text">MT</p>
       </Link>
       <nav className="flex items-center gap-7 text-lg font-medium">
         {navLinks.map(({ href, text }) => (
