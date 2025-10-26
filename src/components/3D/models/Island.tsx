@@ -80,11 +80,11 @@ const Island: React.FC<IslandProps> = ({
     const isTouchEvent = "touches" in event;
 
     const clientX = isTouchEvent ? event.touches[0]?.clientX : event.clientX;
-    const deltaX = clientX - lastX.current / viewport.width;
+    const deltaX = (clientX - lastX.current) / viewport.width;
 
-    islandRef.current!.rotation.y += deltaX * 0.00002 * Math.PI;
+    islandRef.current!.rotation.y += deltaX * 0.01 * Math.PI;
     lastX.current = clientX;
-    rotationSpeed.current = deltaX * 0.00002 * Math.PI;
+    rotationSpeed.current = deltaX * 0.01 * Math.PI;
   };
 
   const handleKeyDown = (event: KeyboardEvent) => {
