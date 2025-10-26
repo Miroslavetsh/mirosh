@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
-import { useAnimations, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { Mesh } from "three";
 import { useFrame } from "@react-three/fiber";
 
@@ -12,8 +12,7 @@ type SkyProps = {
 
 const Sky: React.FC<SkyProps> = ({ isRotating }) => {
   const ref = useRef<Mesh>(null);
-  const { scene, animations } = useGLTF(skyScene);
-  const { actions } = useAnimations(animations, ref);
+  const { scene } = useGLTF(skyScene);
 
   useFrame((_, delta) => {
     if (isRotating) {
