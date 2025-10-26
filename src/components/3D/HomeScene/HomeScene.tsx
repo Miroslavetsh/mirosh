@@ -17,7 +17,7 @@ const adjustIslandForScreenSize = () => {
   if (typeof window === "undefined") return [];
 
   let screenScale: Axis | null = null;
-  const screenPosition: Axis = [0, 6.5, -43];
+  const screenPosition: Axis = [0, -4.5, -43];
   const screenRotation: Axis = [0.1, 4.7, 0];
 
   if (window.innerWidth < 768) {
@@ -40,11 +40,13 @@ export default function HomeScene() {
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
-          <directionalLight />
-          <ambientLight />
-          <pointLight />
-          <spotLight />
-          <hemisphereLight />
+          <directionalLight position={[1, 1, 1]} intensity={2} />
+          <ambientLight intensity={0.5} />
+          <hemisphereLight
+            color="#b1e1ff"
+            groundColor="#000000"
+            intensity={1}
+          />
 
           <Island
             scale={screenScale}
