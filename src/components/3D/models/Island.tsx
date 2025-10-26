@@ -38,17 +38,18 @@ type IslandProps = React.JSX.IntrinsicElements["group"] & {
   rotation?: Axis | null;
   isRotating: boolean;
   setIsRotating: Dispatch<SetStateAction<boolean>>;
+  setCurrentStage: Dispatch<SetStateAction<number | null>>;
 };
 
 const Island: React.FC<IslandProps> = ({
   isRotating,
   setIsRotating,
+  setCurrentStage,
   ...props
 }) => {
   const { nodes, materials } = useGLTF(islandScene) as unknown as IslandGLTF;
   const islandRef = useRef<Group>(null);
   const { gl, viewport } = useThree();
-  const [currentStage, setCurrentStage] = useState<number | null>(null);
 
   const lastX = useRef(0);
   const rotationSpeed = useRef(0);
@@ -83,7 +84,7 @@ const Island: React.FC<IslandProps> = ({
 
     islandRef.current!.rotation.y += deltaX * 0.00002 * Math.PI;
     lastX.current = clientX;
-    rotationSpeed.current = deltaX * 0.0001 * Math.PI;
+    rotationSpeed.current = deltaX * 0.00002 * Math.PI;
   };
 
   const handleKeyDown = (event: KeyboardEvent) => {

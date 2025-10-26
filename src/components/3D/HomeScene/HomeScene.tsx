@@ -21,6 +21,7 @@ export default function HomeScene() {
   const [islandScale, islandPosition, islandRotation] =
     adjustIslandForScreenSize();
   const [planeScale, planePosition] = adjustPlaneForScreenSize();
+  const [currentStage, setCurrentStage] = useState<number | null>(1);
 
   return (
     <section className="w-full h-screen relative">
@@ -41,13 +42,14 @@ export default function HomeScene() {
           />
 
           <Bird />
-          <Sky />
+          <Sky isRotating={isRotating} />
           <Island
             scale={islandScale}
             position={islandPosition}
             rotation={islandRotation}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
           />
           <Plane
             planeScale={planeScale}
