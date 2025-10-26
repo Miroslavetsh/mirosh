@@ -6,6 +6,8 @@ import { Suspense } from "react";
 import Loader from "@/components/3D/Loader/Loader";
 import Island from "@/components/3D/models/Island";
 import Sky from "@/components/3D/models/Sky";
+import Bird from "@/components/3D/models/Bird";
+import Plane from "@/components/3D/models/Plane";
 
 // <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center" />
 
@@ -46,12 +48,14 @@ export default function HomeScene() {
             intensity={1}
           />
 
+          <Bird />
           <Sky />
           <Island
             scale={screenScale}
             position={screenPosition}
             rotation={screenRotation}
           />
+          <Plane />
         </Suspense>
       </Canvas>
     </section>
