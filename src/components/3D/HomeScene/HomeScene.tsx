@@ -5,12 +5,10 @@ import { Suspense } from "react";
 
 import Loader from "@/components/3D/Loader/Loader";
 import Island from "@/components/3D/models/Island";
+import Sky from "@/components/3D/models/Sky";
 
-{
-  /* <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
-        
-</div> */
-}
+// <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center" />
+
 export type Axis = [number, number, number];
 
 const adjustIslandForScreenSize = () => {
@@ -48,6 +46,7 @@ export default function HomeScene() {
             intensity={1}
           />
 
+          <Sky />
           <Island
             scale={screenScale}
             position={screenPosition}
