@@ -1,10 +1,4 @@
-import React, {
-  useRef,
-  useEffect,
-  Dispatch,
-  SetStateAction,
-  useState,
-} from "react";
+import React, { useRef, useEffect, Dispatch, SetStateAction } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { a } from "@react-spring/three";
