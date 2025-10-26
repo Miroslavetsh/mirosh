@@ -9,7 +9,7 @@ export type Link = {
 };
 
 const navLinks: Array<Link> = [
-  { text: "Summary", href: "/about" },
+  { text: "About", href: "/about" },
   { text: "Projects", href: "/projects" },
   { text: "Contact", href: "/contact" },
   { text: "Profile", href: "/profile" },

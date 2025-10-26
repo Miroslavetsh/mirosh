@@ -13,8 +13,7 @@ import {
   adjustIslandForScreenSize,
   adjustPlaneForScreenSize,
 } from "@/lib/3D/screenUtils";
-
-// <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center" />
+import Popup from "../Popup/Popup";
 
 export default function HomeScene() {
   const [isRotating, setIsRotating] = useState(false);
@@ -25,6 +24,7 @@ export default function HomeScene() {
 
   return (
     <section className="w-full h-screen relative">
+      <Popup currentStage={currentStage} />
       <Canvas
         className={clsx(
           "w-full h-screen bg-transparent",
